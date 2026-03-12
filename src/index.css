@@ -1,0 +1,23 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@layer components {
+  ul.menu li {
+    @apply mr-[30px] hover:underline;
+  }
+  @layer components {
+    .btn {
+      @apply min-w-[167px] h-[50px] text-[17px] font-bold leading-[17px] 
+    tracking-[1px] text-white rounded-[6px] border-0 
+    bg-[linear-gradient(163deg,#ff8e64,#ffe641)] transition-transform duration-200 
+    hover:scale-105;
+    }
+    .btn-secondary {
+      @apply btn;
+      background: white;
+      color: black;
+      min-width: 144px;
+      height: 50px;
+    }
+  }
+}
