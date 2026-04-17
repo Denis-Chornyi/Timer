@@ -8,8 +8,7 @@
 - [CSS3](https://developer.mozilla.org/en-US/docs/Web/CSS)
 - [TypeScript](https://developer.mozilla.org/en-US/docs/Glossary/TypeScript)
 - [React](https://legacy.reactjs.org/)
-- [Redux](https://redux.js.org/)
-- [Webpack](https://webpack.js.org/)
+- [Vite](https://vite.dev/)
 - [Tailwindcss](https://tailwindcss.com/)
 - [BEM methodology](https://en.bem.info/methodology/)
 
