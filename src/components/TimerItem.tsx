@@ -1,5 +1,5 @@
-import React from "react";
-import { TimerItem } from "./Timer";
+import React from 'react';
+import { TimerItem } from './Timer';
 
 interface TimerRowProps {
   timer: TimerItem;
@@ -8,21 +8,12 @@ interface TimerRowProps {
   formatTime: (seconds: number) => string;
 }
 
-const TimerRow: React.FC<TimerRowProps> = ({
-  timer,
-  onToggle,
-  onDelete,
-  formatTime,
-}) => {
+const TimerRow: React.FC<TimerRowProps> = ({ timer, onToggle, onDelete, formatTime }) => {
   return (
     <li className="flex items-center justify-around">
-      <span className="text-blue-500 font-bold min-w-[170px] text-start">
-        {timer.title}
-      </span>
+      <span className="text-blue-500 font-bold min-w-[170px] text-start">{timer.title}</span>
 
-      <div className="bg-gray-200 px-6 py-3 rounded-md">
-        {formatTime(timer.time)}
-      </div>
+      <div className="bg-gray-200 px-6 py-3 rounded-md">{formatTime(timer.time)}</div>
 
       <div className="flex gap-4">
         <button

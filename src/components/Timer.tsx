@@ -1,5 +1,5 @@
-import { useState, useEffect, FormEvent } from "react";
-import TimerRow from "./TimerItem";
+import { useState, useEffect, FormEvent } from 'react';
+import TimerRow from './TimerItem';
 
 export interface TimerItem {
   id: number;
@@ -8,10 +8,10 @@ export interface TimerItem {
   isRunning: boolean;
 }
 
-const STORAGE_KEY = "timers";
+const STORAGE_KEY = 'timers';
 
 const Timer: React.FC = () => {
-  const [name, setName] = useState<string>("");
+  const [name, setName] = useState<string>('');
 
   const [timers, setTimers] = useState<TimerItem[]>(() => {
     const saved = localStorage.getItem(STORAGE_KEY);
@@ -30,19 +30,17 @@ const Timer: React.FC = () => {
       id: Date.now(),
       title: name,
       time: 0,
-      isRunning: true,
+      isRunning: true
     };
 
-    setTimers((prev) => [...prev, newTimer]);
-    setName("");
+    setTimers(prev => [...prev, newTimer]);
+    setName('');
   };
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setTimers((prev) =>
-        prev.map((timer) =>
-          timer.isRunning ? { ...timer, time: timer.time + 1 } : timer,
-        ),
+      setTimers(prev =>
+        prev.map(timer => (timer.isRunning ? { ...timer, time: timer.time + 1 } : timer))
       );
     }, 1000);
 
@@ -50,21 +48,19 @@ const Timer: React.FC = () => {
   }, []);
 
   const toggleTimer = (id: number) => {
-    setTimers((prev) =>
-      prev.map((timer) =>
-        timer.id === id ? { ...timer, isRunning: !timer.isRunning } : timer,
-      ),
+    setTimers(prev =>
+      prev.map(timer => (timer.id === id ? { ...timer, isRunning: !timer.isRunning } : timer))
     );
   };
 
   const deleteTimer = (id: number) => {
-    setTimers((prev) => prev.filter((timer) => timer.id !== id));
+    setTimers(prev => prev.filter(timer => timer.id !== id));
   };
 
   const formatTime = (seconds: number): string => {
-    const h = String(Math.floor(seconds / 3600)).padStart(2, "0");
-    const m = String(Math.floor((seconds % 3600) / 60)).padStart(2, "0");
-    const s = String(seconds % 60).padStart(2, "0");
+    const h = String(Math.floor(seconds / 3600)).padStart(2, '0');
+    const m = String(Math.floor((seconds % 3600) / 60)).padStart(2, '0');
+    const s = String(seconds % 60).padStart(2, '0');
     return `${h}:${m}:${s}`;
   };
 
@@ -76,9 +72,8 @@ const Timer: React.FC = () => {
       </h2>
 
       <p className="md:max-w-[570px] text-center text-[#676c75] leading-[30px] tracking-normal">
-        This sounded nonsense to Alice, so she said nothing, but set off at once
-        toward the Red Queen. To her surprise, she lost sight of her in a
-        moment.
+        This sounded nonsense to Alice, so she said nothing, but set off at once toward the Red
+        Queen. To her surprise, she lost sight of her in a moment.
       </p>
 
       <div className="w-full min-h-[190px] mt-[42px] text-center bg-white rounded-xl md:w-auto">
@@ -89,9 +84,7 @@ const Timer: React.FC = () => {
           <input
             type="text"
             value={name}
-            onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
-              setName(e.target.value)
-            }
+            onChange={(e: React.ChangeEvent<HTMLInputElement>) => setName(e.target.value)}
             placeholder="Timer Name"
             className="w-full h-[50px] text-[17px] rounded-[6px] border border-[#e7e8ea] bg-[#f8f9fa] px-[20px] md:w-[305px]"
           />
@@ -107,7 +100,7 @@ const Timer: React.FC = () => {
         <span className="block w-full h-[1px] bg-[#e7e8ea]"></span>
 
         <ul className="flex flex-col gap-[40px] p-[30px]">
-          {timers.map((timer) => (
+          {timers.map(timer => (
             <TimerRow
               key={timer.id}
               timer={timer}

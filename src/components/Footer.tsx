@@ -5,11 +5,7 @@ const Footer = () => {
       <div className="hidden text-[11px] text-[#676c75] text-center md:block">
         <p className="flex items-center text-[#999EA8]">
           Created with
-          <img
-            src="/images/HeartIcon.png"
-            alt="Heart"
-            className="w-[12px] h-[11px] m-[0_3px]"
-          />
+          <img src="/images/HeartIcon.png" alt="Heart" className="w-[12px] h-[11px] m-[0_3px]" />
           by <b className="ml-[4px]">Sergey Azovskiy</b>
         </p>
         <p className="mt-[10px] text-[#999EA8]">© Timers App, 2025</p>
