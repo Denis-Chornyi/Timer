@@ -82,7 +82,7 @@ const Timer: React.FC = () => {
   };
 
   return (
-    <div className="flex flex-col items-center gap-[18px] min-h-[840px] pt-[80px] px-[16px] pb-[113px] xl:p-[249px_0_113px]">
+    <div className="flex flex-col items-center gap-[18px] min-h-[840px] pt-[80px] px-[16px] pb-[113px] xl:p-[250px_0_113px]">
       <h2 className="md:max-w-[570px] text-[35px] text-[#282B31] font-[300] leading-[50px] tracking-[1px]">
         <span className="font-[800] mr-[11px]">Why</span>
         do we use it?
@@ -90,13 +90,13 @@ const Timer: React.FC = () => {
 
       <p className="md:max-w-[570px] text-center text-[#676c75] leading-[30px] tracking-normal">
         This sounded nonsense to Alice, so she said nothing, but set off at once toward the Red
-        Queen.
+        Queen. To her surprise, she lost sight of her in a moment.
       </p>
 
       <div className="w-full min-h-[190px] mt-[42px] text-center bg-white rounded-xl md:w-auto">
         <form
           onSubmit={addTimer}
-          className="w-full flex flex-col items-center gap-[20px] p-[40px_16px_30px_16px] md:flex-row md:w-[770px] md:justify-center"
+          className="w-full flex flex-col items-center gap-[20px] p-[40px_16px_30px_16px] md:flex-row md:w-[770px] md:justify-center md:px-[140px]"
         >
           <input
             type="text"
@@ -108,7 +108,7 @@ const Timer: React.FC = () => {
 
           <button
             type="submit"
-            className="w-full min-w-[165px] h-[50px] text-[17px] font-bold text-white rounded-[6px] bg-gradient-to-r from-orange-400 to-yellow-300 hover:scale-105 transition"
+            className="w-full min-w-[165px] h-[50px] text-[17px] font-bold text-white tracking-[1px] rounded-[6px] bg-gradient-to-r from-orange-400 to-yellow-300 hover:scale-105 transition md:max-w-[165px]"
           >
             Create Timer
           </button>
@@ -116,7 +116,7 @@ const Timer: React.FC = () => {
 
         <span className="block w-full h-[1px] bg-[#e7e8ea]"></span>
 
-        <ul className="flex flex-col gap-[40px] p-[30px]">
+        <ul className="flex flex-col gap-[40px] p-[30px_50px_39px_50px] md:px-[152px]">
           {timers.map(timer => (
             <TimerRow
               key={timer.id}
