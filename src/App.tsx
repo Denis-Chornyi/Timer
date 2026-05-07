@@ -4,7 +4,7 @@ import Timer from './components/Timer';
 
 function App() {
   return (
-    <div className="bg-gray-100">
+    <div className="box-border bg-gray-50">
       <Header></Header>
       <Timer></Timer>
       <Footer></Footer>

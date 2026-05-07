@@ -1,7 +1,7 @@
 const Navigation = () => {
   return (
     <div className="flex items-center">
-      <ul className="hidden md:flex items-center text-white text-[15px] space-r-[30px] menu">
+      <ul className="hidden md:flex items-center text-white text-[15px] space-r-[30px] gap-[31px] menu">
         <li>
           <a href="#">Features</a>
         </li>
